@@ -1,6 +1,7 @@
 package com.example.android.justjava2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.example.android.justjava2.R;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void incrementOrder(View view) {
-        if (quantity == 100){
+        if (quantity == 100) {
             Context context = getApplicationContext();
             CharSequence text = "The maximum number of orders is 100";
             int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context,text,duration);
+            Toast toast = Toast.makeText(context, text, duration);
             toast.show();
             return;
         }
@@ -54,51 +56,57 @@ public class MainActivity extends AppCompatActivity {
         //Log.v("MainActivity", "Name: " + getName);
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
-        //String priceMessage = createOrderSummary(price);
-        //String priceMessage = "Total= $" + price + "\n" + drinkOfTheDay;
-        displayMessage(createOrderSummary(price, hasWhippedCream, hasChocolate,getName));
+        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, getName);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("*/*");
+
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just java order for" + getName);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
+        displayMessage(createOrderSummary(price, hasWhippedCream, hasChocolate, getName));
 
 
     }
 
 
-
-
-
     /**
      * Calculate price order
+     *
      * @param hasWhippedCream is whether or not the user wants whipped cream topping
-     * @param hasChocolate is whether or not the user wants chocolate topping
-     *@return total price
+     * @param hasChocolate    is whether or not the user wants chocolate topping
+     * @return total price
      */
-    private int calculatePrice(boolean hasWhippedCream, boolean hasChocolate){
+    private int calculatePrice(boolean hasWhippedCream, boolean hasChocolate) {
         int price = 5;
 
-        if(hasWhippedCream && hasChocolate){
-            return (price + 3)* quantity;
-        }else if (hasChocolate){
+        if (hasWhippedCream && hasChocolate) {
+            return (price + 3) * quantity;
+        } else if (hasChocolate) {
             return (price + 2) * quantity;
-        }else if(hasWhippedCream){
+        } else if (hasWhippedCream) {
             return (price + 1) * quantity;
-        }else {
+        } else {
             return quantity * price;
         }
     }
 
     /**
-     *
-     * @param price of the order
+     * @param price           of the order
      * @param addWhippedCream is wheter or not the user wants whipped cream topping
-     * @param hasChocolate is wheter or not the user wants chocolate topping
+     * @param hasChocolate    is wheter or not the user wants chocolate topping
      * @return text summary
      */
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean hasChocolate, String getName){
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean hasChocolate, String getName) {
 
-        String priceMessage = "Name: " + getName ;
+        String priceMessage = "Name: " + getName;
         priceMessage += "\nAdd Whipped cream? = " + addWhippedCream;
         priceMessage += "\nAdd chocolate? = " + hasChocolate;
-        priceMessage += "\nQuantity: " + quantity ;
-        priceMessage += "\nTotal= $" + price ;
+        priceMessage += "\nQuantity: " + quantity;
+        priceMessage += "\nTotal= $" + price;
         priceMessage += "\nThank You!";
 
 
@@ -114,17 +122,17 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
 
 
-        if(quantity == 1){
+        if (quantity == 1) {
 
             Context context = getApplicationContext();
             CharSequence text = "You need at least 1 cup of coffee";
             int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context,text,duration);
+            Toast toast = Toast.makeText(context, text, duration);
             toast.show();
 
             return;
         }
-        quantity = quantity -1;
+        quantity = quantity - 1;
         displayQuantity(quantity);
     }
 
@@ -138,11 +146,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-
-     /*
+     * /*
      * This method displays the given text on the screen.
      */
-    private void displayMessage(String message ){
+    private void displayMessage(String message) {
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(message);
     }

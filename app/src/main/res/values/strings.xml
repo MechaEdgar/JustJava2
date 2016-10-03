@@ -7,6 +7,9 @@
     <string name="startPrice" translatable="false">$ 10</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="cream">Whipped Cream</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="quantity">Quantity</string>
 
     <!--Thank you message for the order summary file [CHAT LIMIT = NONE]-->
     <string name="thank_you">Thank you!</string>

@@ -6,4 +6,7 @@
     <string name="thank_you">Gracias</string>
     <string name="toppings">Ingredientes</string>
     <string name="plus">+</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="cream">Crema Batida</string>
+    <string name="quantity">Cantidad</string>
 </resources>

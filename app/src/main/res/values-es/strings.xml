@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just Java 2</string>
+    <string name="Price">Precio</string>
+    <string name="minus">-</string>
+    <string name="thank_you">Gracias</string>
+    <string name="toppings">Ingredientes</string>
+    <string name="plus">+</string>
+</resources>

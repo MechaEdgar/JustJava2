@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * @param price           of the order
-     * @param addWhippedCream is wheter or not the user wants whipped cream topping
-     * @param hasChocolate    is wheter or not the user wants chocolate topping
+     * @param addWhippedCream is whether or not the user wants whipped cream topping
+     * @param hasChocolate    is whether or not the user wants chocolate topping
      * @return text summary
      */
     private String createOrderSummary(int price, boolean addWhippedCream, boolean hasChocolate, String getName) {

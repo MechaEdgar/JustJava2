@@ -18,5 +18,12 @@
     [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_name" translatable="false">Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
-
+    <!-- Add whipped cream? message for the order summary file [CHAR LIMIT = NONE] -->
+    <string name="addWhippedCream">Add whipped cream? = </string>
+    <!-- Add Chocolate? message for the order summary file [CHAR LIMIT = NONE] -->
+    <string name="addChocolate">Add Chocolate?</string>
+    <!-- Total message for the order summary file [CHAR LIMIT = NONE] -->
+    <string name="total">Total =$</string>
+    <!-- quantity message for the order summary file [CHAR LIMIT = NONE] -->
+    <string name="Quantity">Quantity = </string>
 </resources>

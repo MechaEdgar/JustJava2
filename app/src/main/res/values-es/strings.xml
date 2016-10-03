@@ -9,4 +9,8 @@
     <string name="chocolate">Chocolate</string>
     <string name="cream">Crema Batida</string>
     <string name="quantity">Cantidad</string>
+    <string name="addWhippedCream">¿Con crema batida? = </string>
+    <string name="addChocolate">¿Con chocolate? =</string>
+    <string name="total">Total =$</string>
+    <string name="Quantity">Cantidad =</string>
 </resources>

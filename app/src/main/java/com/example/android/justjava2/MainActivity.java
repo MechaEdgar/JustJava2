@@ -104,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
 
         String priceMessage = getString(R.string.order_summary_name, getName);
         priceMessage += "\n" + getString(R.string.addWhippedCream) + addWhippedCream;
-        priceMessage += "\n"+ getString(R.string.addChocolate) + hasChocolate;
-        priceMessage += "\n"+ getString(R.string.Quantity) + quantity;
+        priceMessage += "\n" + getString(R.string.addChocolate) + hasChocolate;
+        priceMessage += "\n" + getString(R.string.Quantity) + quantity;
         priceMessage += "\n" + getString(R.string.total) + price;
         priceMessage += "\n" + getString(R.string.thank_you);
 
@@ -149,9 +149,9 @@ public class MainActivity extends AppCompatActivity {
      * /*
      * This method displays the given text on the screen.
      */
-   // private void displayMessage(String message) {
-     //   TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-     //   orderSummaryTextView.setText(message);
+    // private void displayMessage(String message) {
+    //   TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+    //   orderSummaryTextView.setText(message);
     //}
 
 }
